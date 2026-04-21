@@ -1,0 +1,301 @@
+/* ================= BASE ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #f8fafc;
+}
+
+/* ================= VARIABLES ================= */
+/* :root {
+    --primary: #3b82f6;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: rgba(0, 0, 0, 0.06);
+    --card: rgba(255, 255, 255, 0.95);
+    --bg-subtle: #f8fafc;
+    --hover: rgba(59, 130, 246, 0.08);
+} */
+:root {
+    /* PRIMARY ORANGE (brand / CTA / active) */
+    --primary: #f97316;
+
+    /* TEXT SYSTEM */
+    --text: #1f2937;
+    --muted: #6b7280;
+
+    /* BASE GREY SYSTEM */
+    --border: rgba(0, 0, 0, 0.08);
+    --card: #ffffff;
+    --bg-subtle: #f3f4f6;
+
+    /* HOVER STATE (light orange tint) */
+    --hover: rgba(249, 115, 22, 0.10);
+}
+
+/* ================= LAYOUT ================= */
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
+.app__topbar {
+    height: 68px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.app__layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    flex: 1;
+    overflow: hidden;
+}
+
+
+.app__sidebar {
+    background: #ffffff;
+    border-right: 1px solid var(--border);
+}
+
+
+.app__main {
+    background: #f8fafc;
+    overflow: auto;
+}
+
+/* ================= COMPONENTS ================= */
+/* ================= NAVBAR - SaaS Style ================= */
+.nav-bar {
+    height: 65px;
+    width: 100%;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: var(--card);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* LOGO */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.nav-logo img {
+    max-height: 40px;
+    border-radius: 12px;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+}
+
+
+/* SEARCH - Clean SaaS search */
+.nav-search {
+    flex: 1;
+    max-width: 480px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 32px;
+    padding: 12px 16px;
+
+    background: var(--bg-subtle);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.nav-search i {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.nav-search input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 14px;
+    color: var(--text);
+}
+
+.nav-search input::placeholder {
+    color: #94a3b8;
+}
+
+.nav-search:focus-within {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    background: #fff;
+}
+
+/* RIGHT ACTIONS */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* NOTIFICATION */
+.nav-notification {
+    position: relative;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--muted);
+    transition: all 0.2s ease;
+    background: transparent;
+    border: none;
+}
+
+.nav-notification:hover {
+    /* background: var(--hover); */
+    color: var(--primary);
+}
+
+.nav-notification i {
+    font-size: 18px !important;
+}
+
+.nav-notification span {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    background: #ef4444;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 10px;
+    min-width: 18px;
+    text-align: center;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* USER */
+/* USER */
+.nav-user {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px 12px;
+
+    border-radius: 10px;
+
+    transition: all 0.2s ease;
+}
+
+/* TEXT BLOCK */
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.1;
+}
+
+/* IMAGE */
+.nav-user img {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #f1f5f9;
+    transition: border-color 0.2s ease;
+}
+
+.nav-user:hover img {
+    border-color: var(--primary);
+}
+
+.nav-user:hover .user-name {
+    color: var(--primary);
+}
+
+/* CARET (proper SaaS alignment) */
+.nav-user i {
+    font-size: 12px;
+    color: var(--muted);
+    margin-left: 2px;
+    transition: all 0.2s ease;
+    align-self: flex-end;
+}
+
+.nav-user:hover i {
+    color: var(--primary);
+}
+
+/* TEXT */
+.user-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text);
+}
+
+/*  SALES MUTED (refined) */
+.user-role {
+    font-size: 12px;
+    color: var(--muted);
+    opacity: 0.8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .nav-search,
+    .nav-user {
+        display: none;
+    }
+
+    .nav-actions {
+        gap: 12px;
+    }
+
+    .nav-bar {
+        padding: 0 16px;
+    }
+}
+
+/* ================= UTILITIES ================= */
+
+/* simple global hover system */
+.hoverable {
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hoverable:hover {
+    background: var(--hover);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}

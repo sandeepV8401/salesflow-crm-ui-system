@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="app">
+        <header class="app__topbar">
+            <div id="navbar"></div>
+
+        </header>
+
+        <div class="app__layout">
+            <aside class="app__sidebar">
+                <!-- implement/replace SIDEBAR Component  -->
+            </aside>
+
+            <main class="app__main">
+                <div class="container">
+                    <div class="page">
+
+                        <!-- CARD -->
+                        <section class="card">
+                            Card / KPI / Summary
+                        </section>
+
+                        <!-- TABLE -->
+                        <section class="card">
+                            Table content
+                        </section>
+
+                        <!-- FORM -->
+                        <section class="card">
+                            Form content
+                        </section>
+
+                    </div>
+                </div>
+
+
+            </main>
+        </div>
+
+    </div>
+    <script>
+        fetch('../components/navbar.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('navbar').innerHTML = html;
+            });
+    </script>
+</body>
+
+</html>
