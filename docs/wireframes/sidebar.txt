@@ -1,0 +1,12 @@
+┌─────────────────────────────┐
+│  SalesFlow                  │  ← (branding / logo)
+│                             │
+│  🏠 Dashboard  ← Active     │
+│                             │
+│  📋 Enquiries               │
+│  💰 Quotations              │
+│  📄 PO                      │
+│                             │
+│  💬 Chat                    │
+│  👤 Profile                 │
+└─────────────────────────────┘

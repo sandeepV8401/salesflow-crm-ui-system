@@ -1,42 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
+<div class="sidebar">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidebar</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-</head>
+    <!-- LOGO -->
+    <div class="sidebar-logo">
+        SalesFlow CRM
+    </div>
 
-<body>
-    <aside class="app__sidebar">
-        <div class="sidebar">
-            <a href="#">
-                <i class="fa fa-dashcube" aria-hidden="true"></i>
-                <p>Dashboard</p>
-            </a>
-            <a href="#">
-                <i class="fa fa-sticky-note-o" aria-hidden="true"></i>
-                <p>Enquires</p>
-            </a>
-            <a href="#">
-                <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                <p>Quotations</p>
-            </a>
-            <a href="#">
-                <i class="fa fa-file" aria-hidden="true"></i>
-                <p>PO</p>
-            </a>
-            <a href="#">
-                <i class="fa fa-commenting" aria-hidden="true"></i>
-                <p>Chat</p>
-            </a>
-            <a href="#">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                <p>Profile</p>
+    <!-- MENU -->
+    <nav class="sidebar-menu">
+
+        <!-- MAIN -->
+        <div class="menu-group">
+            <a class="menu-item hoverable" href="#">
+                <i class="fa fa-dashcube"></i>
+                <span>Dashboard</span>
             </a>
         </div>
-    </aside>
+
+        <!-- PIPELINE -->
+        <div class="menu-group">
+            <a class="menu-item hoverable" href="#">
+                <i class="fa fa-sticky-note-o"></i>
+                <span>Enquiries</span>
+            </a>
+
+            <a class="menu-item hoverable" href="#">
+                <i class="fa fa-file-text-o"></i>
+                <span>Quotations</span>
+            </a>
+
+            <a class="menu-item hoverable active" href="#">
+                <i class="fa fa-file"></i>
+                <span>Purchase Orders</span>
+            </a>
+        </div>
+
+        <!-- SECONDARY -->
+        <div class="menu-group secondary">
+            <a class="menu-item hoverable" href="#">
+                <i class="fa fa-commenting"></i>
+                <span>Chat</span>
+            </a>
+
+            <a class="menu-item hoverable   " href="#">
+                <i class="fa fa-user"></i>
+                <span>Profile</span>
+            </a>
+        </div>
+
+    </nav>
+
+</div>
 </body>
 
 </html>

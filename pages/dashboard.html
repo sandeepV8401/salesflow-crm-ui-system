@@ -18,7 +18,7 @@
 
         <div class="app__layout">
             <aside class="app__sidebar">
-                <!-- implement/replace SIDEBAR Component  -->
+                <div id="sidebar"></div>
             </aside>
 
             <main class="app__main">
@@ -53,6 +53,12 @@
             .then(res => res.text())
             .then(html => {
                 document.getElementById('navbar').innerHTML = html;
+            });
+
+        fetch('../components/sidebar.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('sidebar').innerHTML = html;
             });
     </script>
 </body>
