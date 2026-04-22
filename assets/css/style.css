@@ -7,7 +7,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background: #f8fafc;
+    /* background: #f8fafc; */
 }
 
 /* ================= VARIABLES ================= */
@@ -21,6 +21,9 @@ body {
     --hover: rgba(59, 130, 246, 0.08);
 } */
 :root {
+    --surface: #ffffff;
+    --surface-hover: #f9fafb;
+
     /* PRIMARY ORANGE (brand / CTA / active) */
     --primary: #f97316;
 
@@ -35,6 +38,7 @@ body {
 
     /* HOVER STATE (light orange tint) */
     --hover: rgba(249, 115, 22, 0.10);
+
 }
 
 /* ================= LAYOUT ================= */
@@ -46,7 +50,7 @@ body {
 
 
 .app__topbar {
-    height: 68px;
+    height: 65px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -65,14 +69,17 @@ body {
 
 .app__sidebar {
     /* background: #ffffff; */
-    /* border-right: 1px solid var(--border); */
-    box-shadow: 1px 0 4px rgba(0, 0, 0, 0.04);
+    border-right: 1px solid var(--border);
+    /* box-shadow: 2px 0 4px rgba(0, 0, 0, 0.06); */
 }
 
 
 .app__main {
-    /* background: #f8fafc; */
+    /* background: #bfd9f4; */
     overflow: auto;
+    /* padding: 12px 16px;
+    background: var(--card);
+    backdrop-filter: blur(20px); */
 }
 
 /* ================= COMPONENTS ================= */
@@ -85,7 +92,7 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    background: var(--card);
+    background: var(--surface);
     backdrop-filter: blur(20px);
 
 }
@@ -142,8 +149,8 @@ body {
 
 .nav-search:focus-within {
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
-    background: #fff;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.12);
+    background: var(--surface);
 }
 
 /* RIGHT ACTIONS */
@@ -276,7 +283,8 @@ body {
     gap: 20px;
     align-items: flex-start;
     padding: 12px 8px;
-    background: var(--card);
+    /* background: var(--card); */
+    background: var(--surface);
     backdrop-filter: blur(20px);
     height: 100%;
 }
@@ -315,17 +323,14 @@ body {
 }
 
 .menu-item:hover {
-    background: var(--hover);
     color: var(--primary);
 }
 
 .menu-item.active {
-    background: var(--hover);
+    background: #f9fafb;
     color: var(--primary);
     font-weight: 600;
     border-left: 3px solid var(--primary);
-    padding-left: 9px;
-
 }
 
 .menu-item i {
@@ -352,6 +357,195 @@ body {
 .menu-group a {
     text-decoration: none;
 }
+
+/* ================= Main Section - SaaS Style ================= */
+.sales-dash {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px 16px;
+    /* background: var(--card); */
+    backdrop-filter: blur(20px);
+    height: calc(100vh - 65px);
+}
+
+/* .sales-dash-header {
+ 
+    flex: 1.5;
+   
+    background: linear-gradient(160deg, #f97316, #fde8d1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+
+}
+.head-card{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+height:90%;
+background: linear-gradient(135deg, #fde8d1, #f97316);
+padding: 6px 8px;
+border-radius: 8px;
+}
+*/
+.sales-dash-kpi {
+
+    flex: 3;
+    /* background-color: var(--primary); */
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); */
+    display: flex;
+    /* padding: 0 40px; */
+    /* align-items: center; */
+    justify-content: space-between;
+
+}
+
+.kpi-card-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2px;
+    width: 24%;
+    border-radius: 20px;
+    padding: 24px;
+
+    /* background (use your color here) */
+    /* background: rgba(255, 255, 255, 0.15); */
+
+    /* glass blur */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+
+
+    /* soft shadow */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+    /* smooth feel */
+    transition: all 0.25s ease;
+}
+
+
+.kpi-card-layout:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.enquiry {
+    background-color: #FB923C;
+
+}
+
+.quotation {
+    /* background */
+    background-color: #4ADE80;
+
+}
+
+.purchase-order {
+    background-color: #60A5FA;
+
+}
+
+.sales {
+    background-color: #F87171;
+}
+
+.kpi-card-icon {}
+
+.kpi-card-label {}
+
+.kpi-card-value {}
+
+.sales-dash-pipeline {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    flex: 1;
+
+}
+
+.sales-dash-workzone {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    flex: 5;
+}
+
+.sales-section-style {
+    border-radius: 12px;
+
+    padding: 12px 16px;
+}
+
+.sales-dash-header {
+    flex: 1;
+    /* background: linear-gradient(135deg, var(--primary) 0%, var(--muted) 100%); */
+    /* background-color: #FFFFFF; */
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    padding: 32px 40px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.2s ease;
+}
+
+.sales-head-left {
+    display: flex;
+    flex-direction: column;
+    /* gap:8px; */
+    justify-content: space-between;
+}
+
+.sales-head-left span:first-of-type {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+    color: #1f2937;
+}
+
+.sales-head-left>div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.sales-head-left>div span:first-child {
+    font-size: 12px;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.sales-head-left select {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: var(--surface);
+    color: #374151;
+}
+
+.sales-head-right {
+    display: flex;
+    align-items: center;
+    opacity: 0.9;
+}
+
+.sales-head-right span {
+    font-size: 13px;
+    font-weight: 500;
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+
+/* .sales-dash-header:hover {
+    transform: translateY(-2px);
+    box-shadow: 10px 14px 24px -14px rgba(0, 0, 0, 0.35);
+} */
+
+
 
 
 
@@ -380,6 +574,6 @@ body {
 }
 
 .hoverable:hover {
-    background: var(--hover);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background: var(--surface-hover);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
