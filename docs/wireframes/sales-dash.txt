@@ -19,14 +19,23 @@
 │ └──────────────────────────────────────────────────────────────────────────────────────────┘ │
 
 │ 4️⃣ WORK ZONE (ACTION LAYER)                                                                │
-│ ┌─────────────────────────────────┬─────────────────────────────────┐                     │
-│ │ PRIORITY TASKS                 │ RECENT ACTIVITY                  │                     │
-│ │ • #1234 High   [Edit]          │ • New enquiry #1234 ── 2m ago     │                     │
-│ │ • #5678 Medium [Chat]          │ • Quote sent ABC ── 1h ago        │                     │
-│ │ • PO Upload     [Upload]       │ • PO #456 uploaded ── Today       │                     │
-│ │                                 │                                 │                     │
-│ │ [View All Tasks →]             │ [View All Activity →]            │                     │
-│ └─────────────────────────────────┴─────────────────────────────────┘                     │
+│ ┌───────────────────────────────┬───────────────────────────────┐
+│ PRIORITY TASKS               │ RECENT ACTIVITY               │
+├───────────────────────────────┼───────────────────────────────┤
+│ 🔴 Enquiry #1234             │ 🟢 New enquiry #1234          │
+│    Needs quotation           │    2 min ago                  │
+│    [Create Quote]            │                               │
+│                               │ 🟠 Quote sent to ABC         │
+│ 🟠 Quote #5678               │    1 hour ago                 │
+│    follow-up needed       │                               │
+│    [Follow Up]               │ 🔵 PO #456 received           │
+│                               │    Today                     │
+│ 🔵 PO#8950                  │                               │
+│    Ready for processing           │                               │
+│    [process order]               │                               │
+│                               │                               │
+│ View All Tasks →             │ View All Activity →           │
+└───────────────────────────────┴───────────────────────────────┘                    │
 
 └──────────────────────────────────────────────────────────────────────────────────────────────┘
 
