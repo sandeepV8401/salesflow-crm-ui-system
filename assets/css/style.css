@@ -212,7 +212,7 @@ body {
 .nav-user {
     display: flex;
     align-items: center;
-
+    padding-bottom: 10px;
     gap: 10px;
 
     padding: 10px 12px;
@@ -220,11 +220,43 @@ body {
     border-radius: 10px;
 
     transition: all 0.2s ease;
-}
-
-.nav-user:hover {
+    position: relative;
     cursor: pointer;
 }
+
+/* hidden by default */
+.user-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 0;
+     background: var(--surface);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    /* border-radius: 8px; */
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    z-index: 999;
+}
+
+.user-dropdown .dropdown-item {
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.user-dropdown .dropdown-item:hover {
+    background: #f3f3f3;
+}
+
+/* show on hover */
+.nav-user:hover .user-dropdown {
+    display: flex;
+}
+
+/* .nav-user:hover {
+    cursor: pointer;
+} */
 
 /* TEXT BLOCK */
 .user-profile {
@@ -334,6 +366,7 @@ body {
     background: #f9fafb;
     color: var(--primary);
     font-weight: 600;
+    font-size: 16px;
     border-left: 3px solid var(--primary);
 }
 
@@ -377,6 +410,7 @@ body {
 .sales-dash-kpi {
     display: flex;
     gap: 12px;
+    flex: 3;
 }
 
 .kpi-card-layout {
@@ -508,7 +542,7 @@ body {
     font-size: 13px;
     font-weight: 500;
     color: var(--text);
-     line-height: 1;
+    line-height: 1;
 }
 
 .dot {
@@ -608,16 +642,6 @@ body {
     color: #4b5563;
     line-height: 1.5;
 }
-
-
-/* .sales-dash-header:hover {
-    transform: translateY(-2px);
-    box-shadow: 10px 14px 24px -14px rgba(0, 0, 0, 0.35);
-} */
-
-
-
-
 
 /* RESPONSIVE */
 @media (max-width: 768px) {

@@ -4,47 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>SalesFlow Nexus</title>
+
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
+
     <div class="app">
+
+        <!-- 🔷 TOP NAVBAR -->
         <header class="app__topbar">
             <div id="navbar"></div>
         </header>
 
+        <!-- 🔷 MAIN LAYOUT -->
         <div class="app__layout">
+
+            <!-- SIDEBAR -->
             <aside class="app__sidebar">
                 <div id="sidebar"></div>
             </aside>
 
+            <!-- DYNAMIC MAIN AREA -->
             <main class="app__main">
-                <div id="sales-dash"></div>
+                <div id="main-content">
+                    <!-- default page (sales-dash) will load here via JS -->
+                </div>
             </main>
+
         </div>
 
     </div>
-    <script>
-        fetch('../components/navbar.html')
-            .then(res => res.text())
-            .then(html => {
-                document.getElementById('navbar').innerHTML = html;
-            });
 
-        fetch('../components/sidebar.html')
-            .then(res => res.text())
-            .then(html => {
-                document.getElementById('sidebar').innerHTML = html;
-            });
+    <script src="../assets/js/app.js"></script>
 
-        fetch('../components/sales-dash.html')
-            .then(res => res.text())
-            .then(html => {
-                document.getElementById('sales-dash').innerHTML = html;
-            });
-    </script>
 </body>
 
 </html>

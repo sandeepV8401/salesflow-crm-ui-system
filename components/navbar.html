@@ -21,13 +21,25 @@
         </button>
 
         <!-- USER -->
-        <div class="nav-user hoverable">
+        <div class="nav-user hoverable" data-page="profile">
             <img src="../assets/images/myProfile-pic.png" alt="profile">
             <div class="user-profile">
                 <span class="user-name">Sandeep Verma</span>
                 <span class="user-role">Sales</span>
             </div>
             <i class="fa fa-caret-down"></i>
+            <!-- 🔽 DROPDOWN -->
+            <div class="user-dropdown">
+
+                <div class="dropdown-item" data-page="profile">
+                    Edit Profile
+                </div>
+
+                <div class="dropdown-item" id="logout-btn">
+                    Logout
+                </div>
+
+            </div>
         </div>
     </div>
 
