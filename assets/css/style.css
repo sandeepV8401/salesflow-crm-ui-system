@@ -399,11 +399,12 @@ body {
 .sales-dash {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
     padding: 12px 16px;
     /* background: var(--card); */
     backdrop-filter: blur(20px);
     height: calc(100vh - 65px);
+    overflow: hidden;
 }
 
 
@@ -419,7 +420,7 @@ body {
     gap: 8px;
     flex: 1;
     cursor: pointer;
-    border-radius: 20px;
+    border-radius: 12px;
     padding: 24px;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -553,6 +554,7 @@ body {
     border-radius: 50%;
     position: relative;
     top: 1px;
+    display: inline-block;
 }
 
 .pipe-enquiry .dot {
@@ -572,46 +574,144 @@ body {
 }
 
 .sales-dash-workzone {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     flex: 5;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: 1;
     padding: 12px 24px;
     border-radius: 12px;
-    gap: 8px;
+    gap: 16px;
+      align-items: start; */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    flex: 5;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 16px 20px;
+    border-radius: 14px;
+    gap: 18px;
+    align-items: start;
+    background: var(--surface);
+
 }
 
-.sales-priority-task {
-    /* background-color: blanchedalmond; */
-    display: flex;
+.sales-priority-task,
+.sales-recent-activity {
+     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 12px;
+    height: 100%;
 }
 
-.task-head {
-    flex: 1;
+.task-head,
+.activity-head {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 4px;
 }
 
 .task-cards {
-    flex: 8;
+    flex: 5;
     display: flex;
-    flex-direction: column;
-    gap: 1px;
+    /* flex-direction: column; */
+    gap: 5px;
+    /* width: 200px; */
 }
 
 .task-cards div {
-    background-color: blanchedalmond;
-    flex:1;
-}
-
-.task-action {
+    /* background-color: blanchedalmond; */
     flex: 1;
 }
 
-.sales-recent-activity {
-    background-color: aqua;
+.task-cards-content span:first-child, .activity-cards > div span:first-child {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text);
 }
+
+.task-cards-content div {
+    /* display: flex;
+    justify-content:flex-start;
+    gap:24px;
+    align-items: center; */
+    display: grid;
+    /* grid-template-columns: 140px 140px;  */
+    align-items: center;
+    gap: 16px;
+}
+
+.task-action, .activity-action {
+     display: inline-flex;
+    width: fit-content;
+    flex: 1;
+    font-size: 13px;
+    color: #2563eb;
+    cursor: pointer;
+    margin-bottom: 6px;
+      transition: 0.2s ease;
+}
+.task-action:hover,
+.activity-action:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+.task-cards-content div span {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.task-cards-content, .activity-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px 12px;
+     border: 1px solid #f1f1f1;
+    border-radius: 10px;
+    background: #fafafa;
+    
+}
+
+.task-cards-content button {
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.task-cards-content button:hover {
+    background: #1d4ed8;
+}
+
+
+.activity-cards{
+    gap:14px;
+}
+
+.activity-cards div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .activity-action {
+    flex: 1;
+    font-size: 13px;
+    color: #2563eb;
+    cursor: pointer;
+    margin-bottom: 6px;
+} */
+
+.activity-cards > div span:nth-child(2) {
+    font-size: 12px;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+
 
 .sales-dash-header {
     flex: 1;
@@ -620,8 +720,8 @@ body {
     display: flex;
     justify-content: space-between;
     /* align-items: center; */
-    padding: 18px 40px;
-    border-radius: 20px;
+    padding: 12px 36px;
+    border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     transition: all 0.2s ease;
 }
